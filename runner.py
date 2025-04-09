@@ -1,11 +1,12 @@
 import os
 
-path = 'D:/JenkinsProjects/python-practice'
+project_path = 'C:/Users/z004w44s/Documents/GitHub/PythonPractice'
 
-for root, dirs, files in os.walk(path):
+# Loop through all files in that directory
+for root, dirs, files in os.walk(project_path):
     for file in files:
-        if file.endswith('.py'):
+        if file.endswith('.py') and file != 'runner.py':
             filepath = os.path.join(root, file)
-            print(f'Running: {filepath}')
+            print(f"\nRunning {filepath}...")
             exit_code = os.system(f'python "{filepath}"')
-            print(f'Exit code: {exit_code}')
+            print(f"Execution completed with exit code: {exit_code}")
