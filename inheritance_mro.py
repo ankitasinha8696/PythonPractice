@@ -17,6 +17,12 @@ class D(B, C):
         super().show()  # Calls the next method in MRO
         print("Method from D")
 
-# Creating an object of D
-obj = D()
-obj.show()
+
+
+def main():
+    # Creating an object of D
+    obj = D()
+    obj.show()
+
+if __name__ == "__main__":
+    main()

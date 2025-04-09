@@ -10,9 +10,6 @@ class C(B):
     def method(self):
         return super().method() + " C"
 
-obj = C()
-print(obj.method())
-
 class X:
     pass
 
@@ -30,6 +27,14 @@ class Parent:
 class Child(Parent):
     pass
 
-obj = Child()
-obj.x = 20
-print(Parent.x, obj.x)
+def main():
+    obj = C()
+    print(obj.method())
+
+    obj = Child()
+    obj.x = 20
+    print(Parent.x, obj.x)
+
+if __name__ == "__main__":
+    main()
+

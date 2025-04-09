@@ -16,5 +16,9 @@ class Dog(Animal):
     def make_sound(self):
         print("Bark!")
 
-dog = Dog("Buddy")
-dog.make_sound()
+def main():
+    dog = Dog("Buddy")
+    dog.make_sound()
+
+if __name__ == "__main__":
+    main()

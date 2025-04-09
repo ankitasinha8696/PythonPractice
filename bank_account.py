@@ -50,12 +50,16 @@ class CurrentAccount(BankAccount):
         else:
             print("This withdrawal cannot be performed as it exceeds the overdraft limit.")
 
-# Create a savings account
-savings = SavingsAccount("12345", "Alice", 100)
-savings.withdraw(600)  # Should work
-savings.withdraw(500)  # Should not work (balance can't go below 500)
+def main():
+    # Create a savings account
+    savings = SavingsAccount("12345", "Alice", 1000)
+    savings.withdraw(600)  # Should work
+    savings.withdraw(500)  # Should not work (balance can't go below 500)
 
-# Create a current account
-current = CurrentAccount("67890", "Bob", 500)
-current.withdraw(1200)  # Should work (due to overdraft limit)
-current.withdraw(500)   # Should not work (over limit)
+    # Create a current account
+    current = CurrentAccount("67890", "Bob", 500)
+    current.withdraw(1200)  # Should work (due to overdraft limit)
+    current.withdraw(500)   # Should not work (over limit)
+
+if __name__ == "__main__":
+    main()
