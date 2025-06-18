@@ -62,6 +62,25 @@ def find_the_first_non_repeating_character(input_string):
             return char
     return ""
 
+def find_first_unique_character(input_string):
+    count_of_ch = {}
+    for i in range(len(input_string)):
+        if input_string[i] in count_of_ch:
+            count_of_ch[input_string[i]] += 1
+        else:
+            count_of_ch[input_string[i]] = 1
+    for key, value in count_of_ch.items():
+        if value == 1:
+            return key
+    return None
+
+def find_first_unique_character_Counter(input_string):
+    count_of_ch = Counter(input_string)
+    for key, value in count_of_ch.items():
+        if value == 1:
+            return key
+    return None
+
 
 def main():
     print("Reverse string of ANKITA: ", reverse_string("ANKITA"))
@@ -89,6 +108,10 @@ def main():
     print(capitalize_first_letters("I am an automation tester who performs functional testing for APIs. I also do integration testing, performance testing and regression testing."))
 
     print(find_the_first_non_repeating_character("I am an automation tester"))
+
+    print(find_first_unique_character("abcabbabdd"))
+
+    print(find_first_unique_character_Counter("abcabbabdd"))
 
 if __name__ == "__main__":
     main()
